@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<header>
+    <title>CRUD Operation with PostgreSQL</title>
+</header>
+<body>
+    <center>
+        <h1>Insert Record into PostgreSQL Course Table</h1>
+        <h3>INFO 537 Learning Django and CRUD</h3>
+        <hr/>
+        <form method = "POST">
+            {%csrf_token%}
+        <table border="1">
+            <tr>
+                <tr>
+                <td>Course ID</td>
+                <td><input type = "text" placeholder="Enter Course ID...", name = "cid"></td>
+                </tr>
+                <tr>
+                <td>Course Title</td>
+                <td><input type = "text" placeholder="Enter Course Title...", name = "course_title"></td>
+                </tr>
+                <tr>
+                <td>Credit Hours</td>
+                <td><input type = "text" placeholder="Enter Credit Hours...", name = "course_hours"></td>
+                </tr>
+                <tr>
+                    <td><input type = "submit" value="Insert"/>
+                </tr>
+            </tr>
+        </table>
+        <a href= "{% url 'showstu' %}">Home Page</a>
+        </form>
+    </center>
+</body>

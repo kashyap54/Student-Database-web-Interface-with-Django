@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<header>
+    CRUD Operation with PostgreSQL
+</header>
+<body>
+    <center>
+        <h1>Perform CRUD operation for Student Data with PostgreSQL</h1>
+        <h3>INFO 537 Learning Django and CRUD</h3>
+        <hr/>
+        <a href= "{% url 'Insertemp' %}">Insert a New Student</a>
+        <table border = "1">
+            <tr>
+                <th>Student Id</th>
+                <th>Student Name</th>
+                <th>Age</th>
+                <th>DoB</th>
+                <th>Grade</th>
+                <th>Course Id</th>
+            </tr>
+            {% for result in data %}
+            <tr>
+                <td>{{result.id}}</td>
+                <td>{{result.sname}}</td>
+                <td>{{result.age}}</td>
+                <td>{{result.dob}}</td>
+                <td>{{result.grade}}</td>
+                <td>{{result.cid}}</td>
+                <td><a href="Edit/{{result.id}}">Edit</a></td>
+                <td><a href="Delete/{{result.id}}" onclick="return confirm('Are you sure?')">Delete</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href= "{% url 'Insertcor' %}">Insert a New Course</a>
+        <table border = "1">
+            <tr>
+                <th>Course Id</th>
+                <th>Course Title</th>
+                <th>Credit Hours</th>
+            </tr>
+            {% for result1 in data1 %}
+            <tr>
+                <td>{{result1.cid}}</td>
+                <td>{{result1.course_title}}</td>
+                <td>{{result1.course_hours}}</td>
+                <td><a href="Edit2/{{result1.cid}}">Edit2</td>
+                <td><a href="Delete2/{{result1.cid}}" onclick="return confirm('Are you sure?')">Delete2</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>

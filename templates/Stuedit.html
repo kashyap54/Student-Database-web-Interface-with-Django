@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<header>
+    CRUD Operation with PostgreSQL
+</header>
+<body>
+    <center>
+        <h1>How to Edit Student details with PostgreSQL</h1>
+        <h3>INFO 537 Learning Django and CRUD</h3>
+        <hr/>
+        <form method="POST" action="/Update/{{StuModel.id}}">
+        {% csrf_token %}
+        <table border = "1">
+            <tr>
+                <td>Student Id</td>
+                <td><input type = "text" name = "id" value = "{{StuModel.id}}" readonly></td>
+            </tr>
+            <tr>
+                <td>Student Name</td>
+                <td><input type = "text" name = "sname" value = "{{StuModel.sname}}"></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td><input type = "text" name = "age" value = "{{StuModel.age}}"></td>
+            </tr>
+            <tr>
+                <td>DoB</td>
+                <td><input type = "text" name = "dob" value = "{{StuModel.dob}}"></td>
+            </tr>
+            <tr>
+                <td>Grade</td>
+                <td><input type = "text" name = "grade" value = "{{StuModel.grade}}"></td>
+            </tr>
+            <tr>
+                <td>Course Id</td>
+                <td><input type = "text" name = "cid" value = "{{StuModel.cid}}"></td>
+            </tr>
+            
+            <tr
+                <td><input type = "submit" value = "Update Record"></td>
+            </tr>
+
+        </table>
+        <a href= "{% url 'showstu' %}">Go to Home Page</a>
+    </form>
+    </center>
+</body>

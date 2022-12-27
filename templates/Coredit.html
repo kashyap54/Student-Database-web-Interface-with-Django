@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<header>
+    CRUD Operation with PostgreSQL
+</header>
+<body>
+    <center>
+        <h1>How to Edit Course details with PostgreSQL</h1>
+        <h3>INFO 537 Learning Django and CRUD</h3>
+        <hr/>
+        <form method="POST" action="/Update2/{{CorModel.cid}}">
+        {% csrf_token %}
+        <table border = "1">
+            <tr>
+                <td>Course Id</td>
+                <td><input type = "text" name = "Course id" value = "{{CorModel.cid}}" readonly></td>
+            </tr>
+            <tr>
+                <td>Course Title</td>
+                <td><input type = "text" name = "course_title" value = "{{CorModel.course_title}}"></td>
+            </tr>
+            <tr>
+                <td>Credit Hours</td>
+                <td><input type = "text" name = "course_hours" value = "{{CorModel.course_hours}}"></td>
+            </tr>
+            <tr
+                <td><input type = "submit" value = "Update Record"></td>
+            </tr>
+
+        </table>
+        <a href= "{% url 'showstu' %}">Go to Home Page</a>
+    </form>
+    </center>
+</body>
